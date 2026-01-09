@@ -1,0 +1,204 @@
+/**
+ * PaletteBuilder Styles
+ *
+ * Split-view layout: Sidebar (30%) + Preview (70%)
+ */
+
+.palette-builder {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #fafafa;
+}
+
+/* ===== SIDEBAR (30%) ===== */
+.palette-sidebar {
+  width: 30%;
+  min-width: 320px;
+  max-width: 400px;
+  background-color: #ffffff;
+  border-right: 1px solid #e5e5e5;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.palette-sidebar-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 2rem 1.5rem;
+}
+
+/* Logo */
+.palette-logo {
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.palette-logo h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 0.25rem 0;
+}
+
+.palette-version {
+  font-size: 0.75rem;
+  color: #8a8a8a;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Dimensions Container (Desktop) */
+.palette-dimensions-desktop {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  flex: 1;
+  margin-bottom: 2rem;
+}
+
+/* Dimensions Container (Mobile) - Hidden by default */
+.palette-dimensions-mobile {
+  display: none;
+  flex-direction: column;
+  gap: 1.5rem;
+  flex: 1;
+  margin-bottom: 2rem;
+}
+
+/* Dimension Navigation (Small Screen) */
+.dimension-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+.dimension-nav-arrow {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #4a4a4a;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 150ms ease-out;
+}
+
+.dimension-nav-arrow:hover {
+  color: #1a1a1a;
+}
+
+.dimension-nav-label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  min-width: 120px;
+  text-align: center;
+}
+
+/* Dimension Dots */
+.dimension-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.dimension-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #d0d0d0;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: all 150ms ease-out;
+}
+
+.dimension-dot.active {
+  background-color: #4a4a4a;
+  width: 10px;
+  height: 10px;
+}
+
+.dimension-dot:hover {
+  background-color: #8a8a8a;
+}
+
+/* Export Button */
+.palette-export-button {
+  width: 100%;
+  padding: 1rem;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 150ms ease-out;
+  margin-top: auto;
+}
+
+.palette-export-button:hover {
+  background-color: #2a2a2a;
+  transform: translateY(-1px);
+}
+
+/* ===== PREVIEW PANE (70%) ===== */
+.palette-preview-pane {
+  width: 70%;
+  flex: 1;
+  overflow-y: auto;
+  background-color: #fafafa;
+}
+
+/* ===== RESPONSIVE ===== */
+
+/* Tablet and smaller */
+@media (max-width: 1024px) {
+  .palette-sidebar {
+    min-width: 280px;
+    max-width: 320px;
+  }
+
+  /* Switch to mobile dimension selector */
+  .palette-dimensions-desktop {
+    display: none;
+  }
+
+  .palette-dimensions-mobile {
+    display: flex;
+  }
+}
+
+/* Small screens */
+@media (max-width: 768px) {
+  .palette-builder {
+    flex-direction: column;
+  }
+
+  .palette-sidebar {
+    width: 100%;
+    max-width: none;
+    border-right: none;
+    border-bottom: 1px solid #e5e5e5;
+  }
+
+  .palette-preview-pane {
+    width: 100%;
+  }
+
+  .palette-sidebar-content {
+    padding: 1.5rem 1rem;
+  }
+}

@@ -1,0 +1,196 @@
+/**
+ * DimensionSelector Styles
+ */
+
+.dimension-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* Dimension Label */
+.dimension-label {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #4a4a4a;
+  letter-spacing: 0.025em;
+}
+
+.dimension-number {
+  color: #8a8a8a;
+  font-weight: 500;
+}
+
+.dimension-name {
+  color: #1a1a1a;
+}
+
+/* Option Navigation */
+.option-navigation {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.option-arrow {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  color: #4a4a4a;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 150ms ease-out;
+  border-radius: 4px;
+  min-width: 32px;
+  min-height: 32px;
+}
+
+.option-arrow:hover {
+  color: #1a1a1a;
+  background-color: #f5f5f5;
+}
+
+.option-arrow:active {
+  transform: scale(0.95);
+}
+
+/* Option Label Container (for tooltip positioning) */
+.option-label-container {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+}
+
+.option-label {
+  font-size: 0.9375rem;
+  color: #1a1a1a;
+  font-weight: 500;
+  display: block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: help;
+}
+
+/* Tooltip */
+.option-tooltip {
+  position: absolute;
+  bottom: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #2a2a2a;
+  color: #ffffff;
+  padding: 0.875rem 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  width: max-content;
+  max-width: 320px;
+  pointer-events: none;
+  animation: tooltipFadeIn 150ms ease-out;
+}
+
+.tooltip-arrow {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #2a2a2a;
+}
+
+.tooltip-content {
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  font-weight: 400;
+  white-space: normal;
+}
+
+@keyframes tooltipFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* Tooltip positioning - flip if near top of screen */
+.dimension-selector:first-child .option-tooltip,
+.dimension-selector:nth-child(2) .option-tooltip {
+  bottom: auto;
+  top: calc(100% + 12px);
+}
+
+.dimension-selector:first-child .tooltip-arrow,
+.dimension-selector:nth-child(2) .tooltip-arrow {
+  top: auto;
+  bottom: 100%;
+  border-top: none;
+  border-bottom: 6px solid #2a2a2a;
+}
+
+/* Option Dots */
+.option-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.375rem;
+  flex-wrap: wrap;
+  padding: 0.25rem 0;
+}
+
+.option-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #d0d0d0;
+  transition: all 150ms ease-out;
+  display: inline-block;
+}
+
+.option-dot.active {
+  background-color: #4a4a4a;
+  width: 8px;
+  height: 8px;
+}
+
+/* Mobile variant */
+.dimension-selector.mobile {
+  background-color: #f9f9f9;
+  padding: 1.25rem;
+  border-radius: 8px;
+}
+
+.dimension-selector.mobile .dimension-label {
+  display: none; /* Number/name shown in dimension navigation instead */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .option-label {
+    font-size: 0.875rem;
+  }
+
+  .option-tooltip {
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .option-tooltip {
+    max-width: 240px;
+    font-size: 0.75rem;
+    padding: 0.75rem 0.875rem;
+  }
+}

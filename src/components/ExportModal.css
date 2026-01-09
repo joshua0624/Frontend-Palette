@@ -1,0 +1,231 @@
+/**
+ * ExportModal Styles
+ */
+
+/* Backdrop */
+.export-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 2rem;
+  animation: backdropFadeIn 200ms ease-out;
+}
+
+@keyframes backdropFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Modal */
+.export-modal {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+  max-width: 700px;
+  width: 100%;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  animation: modalSlideIn 250ms ease-out;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Header */
+.export-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.75rem 2rem;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.export-modal-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.export-modal-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #8a8a8a;
+  cursor: pointer;
+  padding: 0.5rem;
+  line-height: 1;
+  transition: color 150ms ease-out;
+  border-radius: 4px;
+}
+
+.export-modal-close:hover {
+  color: #1a1a1a;
+  background-color: #f5f5f5;
+}
+
+/* Content */
+.export-modal-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 2rem;
+}
+
+/* Preview Note */
+.export-preview-note {
+  background-color: #f9f9f9;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.export-note-text {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #5a5a5a;
+  font-style: italic;
+}
+
+/* Specifications */
+.export-specifications {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.export-dimension {
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.export-dimension:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.export-dimension-title {
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.export-dimension-descriptor {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: #4a4a4a;
+}
+
+/* Actions */
+.export-modal-actions {
+  display: flex;
+  gap: 1rem;
+  padding: 1.75rem 2rem;
+  border-top: 1px solid #e5e5e5;
+}
+
+.export-action-button {
+  flex: 1;
+  padding: 0.875rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 150ms ease-out;
+}
+
+.export-copy-button {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+.export-copy-button:hover {
+  background-color: #2a2a2a;
+  transform: translateY(-1px);
+}
+
+.export-download-button {
+  background-color: #f5f5f5;
+  color: #1a1a1a;
+  border: 1px solid #e5e5e5;
+}
+
+.export-download-button:hover {
+  background-color: #ebebeb;
+  border-color: #d0d0d0;
+  transform: translateY(-1px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .export-modal-backdrop {
+    padding: 1rem;
+  }
+
+  .export-modal {
+    max-height: 90vh;
+  }
+
+  .export-modal-header {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .export-modal-header h2 {
+    font-size: 1.25rem;
+  }
+
+  .export-modal-content {
+    padding: 1.5rem;
+  }
+
+  .export-modal-actions {
+    flex-direction: column;
+    padding: 1.25rem 1.5rem;
+  }
+
+  .export-action-button {
+    width: 100%;
+  }
+}
+
+/* Scrollbar styling */
+.export-modal-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.export-modal-content::-webkit-scrollbar-track {
+  background: #f5f5f5;
+  border-radius: 4px;
+}
+
+.export-modal-content::-webkit-scrollbar-thumb {
+  background: #d0d0d0;
+  border-radius: 4px;
+}
+
+.export-modal-content::-webkit-scrollbar-thumb:hover {
+  background: #b0b0b0;
+}
