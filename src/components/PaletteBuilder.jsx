@@ -23,6 +23,9 @@ export default function PaletteBuilder() {
   // Modal state
   const [showExportModal, setShowExportModal] = useState(false);
 
+  // Track motion dimension changes to trigger entry animations
+  const [motionChangeKey, setMotionChangeKey] = useState(0);
+
   // Apply CSS variables whenever selections change
   useEffect(() => {
     const cssVars = getAllCSSVariables(selections);
@@ -34,6 +37,11 @@ export default function PaletteBuilder() {
 
     return () => clearTimeout(timeoutId);
   }, [selections]);
+
+  // Track motion dimension changes separately to trigger entry animations
+  useEffect(() => {
+    setMotionChangeKey(prev => prev + 1);
+  }, [selections.motionPhilosophy]);
 
   // Handle cycling to next/previous option within a dimension
   const cycleOption = (dimensionId, direction) => {
@@ -148,7 +156,10 @@ export default function PaletteBuilder() {
 
       {/* Preview (70%) */}
       <main className="palette-preview-pane">
-        <PreviewWebsite />
+        <PreviewWebsite
+          motionSetting={DIMENSIONS[2].options[selections.motionPhilosophy].id}
+          motionChangeKey={motionChangeKey}
+        />
       </main>
 
       {/* Export Modal */}

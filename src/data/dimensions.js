@@ -407,6 +407,7 @@ export const DIMENSIONS = [
           '--layout-content-width': '100%',
           '--layout-grid-columns': '1',
           '--layout-align': 'flex-start',
+          '--layout-card-span': 'auto',
         }
       },
       {
@@ -418,6 +419,7 @@ export const DIMENSIONS = [
           '--layout-content-width': '100%',
           '--layout-grid-columns': 'repeat(auto-fit, minmax(280px, 1fr))',
           '--layout-align': 'flex-start',
+          '--layout-card-span': 'auto',
         }
       },
       {
@@ -429,6 +431,7 @@ export const DIMENSIONS = [
           '--layout-content-width': '100%',
           '--layout-grid-columns': 'repeat(12, 1fr)',
           '--layout-align': 'flex-start',
+          '--layout-card-span': 'span 4',
         }
       },
       {
@@ -440,6 +443,7 @@ export const DIMENSIONS = [
           '--layout-content-width': '75%',
           '--layout-grid-columns': '1',
           '--layout-align': 'center',
+          '--layout-card-span': 'auto',
         }
       },
       {
@@ -451,6 +455,7 @@ export const DIMENSIONS = [
           '--layout-content-width': '100%',
           '--layout-grid-columns': '1',
           '--layout-align': 'flex-start',
+          '--layout-card-span': 'auto',
         }
       },
     ]

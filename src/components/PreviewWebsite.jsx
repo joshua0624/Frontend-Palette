@@ -7,9 +7,36 @@
  * Content is hardcoded per specification Section 10.2
  */
 
+import { useState, useEffect } from 'react';
 import './PreviewWebsite.css';
 
-export default function PreviewWebsite() {
+export default function PreviewWebsite({
+  motionSetting = 'subtle-functional',
+  motionChangeKey = 0
+}) {
+  const [showEntryAnimation, setShowEntryAnimation] = useState(false);
+
+  // Trigger entry animation when motion setting changes
+  useEffect(() => {
+    if (motionChangeKey > 0) {
+      setShowEntryAnimation(true);
+      const timeout = setTimeout(() => {
+        setShowEntryAnimation(false);
+      }, 1500);
+      return () => clearTimeout(timeout);
+    }
+  }, [motionChangeKey]);
+
+  // Helper function to get motion label for indicator
+  const getMotionLabel = (setting) => {
+    const labels = {
+      'none': 'None',
+      'subtle-functional': 'Subtle',
+      'expressive-restrained': 'Expressive'
+    };
+    return labels[setting] || 'Subtle';
+  };
+
   return (
     <div className="preview-website">
       {/* Header/Navigation Section */}
@@ -22,9 +49,11 @@ export default function PreviewWebsite() {
             <a href="#" className="preview-nav-link">Services</a>
             <a href="#" className="preview-nav-link">Contact</a>
           </nav>
-          <button className="preview-button preview-button-primary">
-            Get Started
-          </button>
+          <div className="preview-header-actions">
+            <button className="preview-button preview-button-primary">
+              Get Started
+            </button>
+          </div>
         </div>
       </header>
 
@@ -37,7 +66,7 @@ export default function PreviewWebsite() {
           We create digital experiences that connect with your audience and drive meaningful results through design excellence and technical precision.
         </p>
         <div className="preview-hero-actions">
-          <button className="preview-button preview-button-primary">
+          <button className="preview-button preview-button-primary motion-demo-pulse">
             View Our Work
           </button>
           <button className="preview-button preview-button-secondary">
@@ -50,34 +79,40 @@ export default function PreviewWebsite() {
       <section className="preview-services">
         <h2 className="preview-section-title">Our Services</h2>
         <div className="preview-cards">
-          <div className="preview-card">
+          <div className={`preview-card motion-demo-float ${showEntryAnimation ? 'motion-demo-enter' : ''}`}>
             <h3 className="preview-card-title">Design Systems</h3>
             <p className="preview-card-body">
               We build comprehensive design systems that bring consistency, efficiency, and scalability to your product development process. From foundational tokens to component libraries, we create the building blocks for cohesive digital experiences.
             </p>
-            <button className="preview-button preview-button-card">
-              Learn More
-            </button>
+            <div className="preview-card-action">
+              <button className="preview-button preview-button-card">
+                Learn More
+              </button>
+            </div>
           </div>
 
-          <div className="preview-card">
+          <div className={`preview-card motion-demo-float ${showEntryAnimation ? 'motion-demo-enter' : ''}`}>
             <h3 className="preview-card-title">Web Development</h3>
             <p className="preview-card-body">
               Our development team transforms designs into performant, accessible, and maintainable web applications. We specialize in modern frameworks and best practices that ensure your product scales with your business needs.
             </p>
-            <button className="preview-button preview-button-card">
-              Learn More
-            </button>
+            <div className="preview-card-action">
+              <button className="preview-button preview-button-card">
+                Learn More
+              </button>
+            </div>
           </div>
 
-          <div className="preview-card">
+          <div className={`preview-card motion-demo-float ${showEntryAnimation ? 'motion-demo-enter' : ''}`}>
             <h3 className="preview-card-title">Brand Strategy</h3>
             <p className="preview-card-body">
               We help you define and articulate your brand's unique position in the market. Through research, workshops, and strategic planning, we create brand foundations that resonate with your target audience and drive business growth.
             </p>
-            <button className="preview-button preview-button-card">
-              Learn More
-            </button>
+            <div className="preview-card-action">
+              <button className="preview-button preview-button-card">
+                Learn More
+              </button>
+            </div>
           </div>
         </div>
       </section>

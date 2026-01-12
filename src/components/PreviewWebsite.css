@@ -34,6 +34,12 @@
   gap: var(--spacing-inline, 1rem);
 }
 
+.preview-header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-inline, 1rem);
+}
+
 .preview-logo {
   font-family: var(--font-heading, system-ui, sans-serif);
   font-weight: calc(var(--tone-visual-weight, 400) + 300);
@@ -183,6 +189,7 @@
   box-shadow: var(--shadow-card, none);
   border: var(--tone-border-width, 0) solid var(--color-border, #e0e0e0);
   opacity: var(--tone-border-opacity, 1);
+  grid-column: var(--layout-card-span, auto);
   transition: all var(--transition-duration, 150ms) var(--transition-easing, ease-out);
 }
 
@@ -207,6 +214,12 @@
   opacity: var(--tone-contrast-boost, 1);
   text-align: center;
   transition: all var(--transition-duration, 150ms) var(--transition-easing, ease-out);
+}
+
+.preview-card-action {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Content Section */
@@ -355,6 +368,141 @@
   color: var(--color-accent, #0066cc);
 }
 
+/* ====================================
+   MOTION DEMONSTRATIONS
+   ==================================== */
+
+/* Motion Indicator Badge */
+.motion-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background: var(--color-background-subtle, #f5f5f5);
+  border-radius: var(--border-radius-button, 4px);
+  font-size: 0.75rem;
+  color: var(--color-text-secondary, #666666);
+  border: 1px solid var(--color-border, #e0e0e0);
+}
+
+.motion-indicator-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-accent, #0066cc);
+  animation: motion-indicator-pulse
+    calc(var(--transition-duration, 150ms) * 10)
+    var(--transition-easing, ease-out)
+    infinite;
+}
+
+.motion-indicator-label {
+  white-space: nowrap;
+}
+
+@keyframes motion-indicator-pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(0.85);
+  }
+}
+
+/* Continuous pulse on primary CTA button */
+.motion-demo-pulse {
+  animation: motion-demo-button-pulse
+    calc(var(--transition-duration, 150ms) * 20)
+    var(--transition-easing, ease-out)
+    infinite;
+}
+
+@keyframes motion-demo-button-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.015);
+  }
+}
+
+/* Continuous float on service cards */
+.motion-demo-float {
+  animation: motion-demo-card-float
+    calc(var(--transition-duration, 150ms) * 20)
+    var(--transition-easing, ease-out)
+    infinite;
+}
+
+@keyframes motion-demo-card-float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+/* Stagger delays for 3 cards */
+.motion-demo-float:nth-child(1) {
+  animation-delay: 0ms;
+}
+.motion-demo-float:nth-child(2) {
+  animation-delay: calc(var(--transition-duration, 150ms) * 2);
+}
+.motion-demo-float:nth-child(3) {
+  animation-delay: calc(var(--transition-duration, 150ms) * 4);
+}
+
+/* Entry animation triggered on motion change */
+.motion-demo-enter {
+  animation: motion-demo-card-enter
+    calc(var(--transition-duration-slow, 250ms))
+    var(--transition-easing, ease-out)
+    forwards;
+}
+
+@keyframes motion-demo-card-enter {
+  from {
+    opacity: 0;
+    transform: translateX(-20px) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+  }
+}
+
+/* Stagger entry animation */
+.motion-demo-enter:nth-child(1) {
+  animation-delay: 0ms;
+}
+.motion-demo-enter:nth-child(2) {
+  animation-delay: var(--transition-duration, 150ms);
+}
+.motion-demo-enter:nth-child(3) {
+  animation-delay: calc(var(--transition-duration, 150ms) * 2);
+}
+
+/* Handle None motion setting - disable animations */
+[style*="--transition-duration: 0ms"] .motion-demo-pulse,
+[style*="--transition-duration: 0ms"] .motion-demo-float,
+[style*="--transition-duration: 0ms"] .motion-indicator-dot {
+  animation: none !important;
+}
+
+/* Accessibility: Respect user preferences */
+@media (prefers-reduced-motion: reduce) {
+  .motion-demo-pulse,
+  .motion-demo-float,
+  .motion-indicator-dot,
+  .motion-demo-enter {
+    animation: none !important;
+  }
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .preview-header-content {
@@ -373,6 +521,10 @@
 
   .preview-cards {
     grid-template-columns: 1fr;
+  }
+
+  .preview-card {
+    grid-column: auto;
   }
 
   .preview-footer-content {
