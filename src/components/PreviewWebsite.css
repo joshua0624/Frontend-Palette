@@ -118,7 +118,7 @@
   max-width: var(--layout-max-width, 1200px);
   margin: 0 auto;
   padding: var(--spacing-section, 4rem) var(--padding-container, 2rem);
-  text-align: var(--layout-align, center);
+  text-align: center;
   transition: all var(--transition-duration, 150ms) var(--transition-easing, ease-out);
 }
 
@@ -129,6 +129,7 @@
   line-height: var(--line-height-heading, 1.2);
   color: var(--color-text-primary, #1a1a1a);
   margin-bottom: var(--spacing-element, 1rem);
+  text-align: center;
   transition: all var(--transition-duration, 150ms) var(--transition-easing, ease-out);
 }
 
@@ -139,6 +140,7 @@
   margin: 0 auto var(--spacing-component, 2rem);
   line-height: var(--line-height-body, 1.6);
   opacity: var(--tone-contrast-boost, 1);
+  text-align: center;
   transition: all var(--transition-duration, 150ms) var(--transition-easing, ease-out);
 }
 
@@ -164,6 +166,7 @@
   line-height: var(--line-height-heading, 1.2);
   color: var(--color-text-primary, #1a1a1a);
   margin-bottom: var(--spacing-component, 2rem);
+  text-align: center;
   transition: all var(--transition-duration, 150ms) var(--transition-easing, ease-out);
 }
 
@@ -193,6 +196,7 @@
   font-weight: calc(var(--tone-visual-weight, 400) + 300);
   color: var(--color-text-primary, #1a1a1a);
   margin-bottom: var(--spacing-element, 1rem);
+  text-align: center;
   transition: all var(--transition-duration, 150ms) var(--transition-easing, ease-out);
 }
 
@@ -201,6 +205,7 @@
   line-height: var(--line-height-body, 1.6);
   margin-bottom: var(--spacing-element, 1rem);
   opacity: var(--tone-contrast-boost, 1);
+  text-align: center;
   transition: all var(--transition-duration, 150ms) var(--transition-easing, ease-out);
 }
 
