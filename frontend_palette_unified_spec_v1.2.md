@@ -126,7 +126,7 @@ Each selectable option consists of:
 
 **CRITICAL:** The system uses ONLY the predetermined options defined below. No new options are generated at runtime. The architecture supports adding new options in future versions, but all options must be pre-authored and added to this specification.
 
-### 8.1 Color System (7 Options)
+### 8.1 Color System (12 Options)
 
 **Full Dimension Name:** Color System  
 **UI Display Name:** Color  
@@ -147,6 +147,16 @@ Each selectable option consists of:
 6. **Muted Pastel Accents**: Use a low-saturation neutral palette and apply soft pastel accent tones selectively to highlight interface states without compromising overall readability.
 
 7. **Functional Warm Palette**: Use a warm-toned palette with medium contrast, applying accent colors to primary actions while keeping secondary elements subdued for hierarchy clarity.
+
+8. **Soft Tinted Canvas**: Use a subtle colored background instead of white or neutral tones, applying soft blue or lavender base tones throughout the interface to create a calm, distinctive atmosphere.
+
+9. **Vibrant Accent Highlights**: Use a neutral base palette and apply vibrant, high-saturation accent colors strategically to draw attention to primary actions and critical interface states.
+
+10. **Organic Earth Tones**: Use a warm earth-toned palette with natural browns and greens, applying subdued contrast to create a grounded, organic interface aesthetic.
+
+11. **Retro Warm Burst**: Use a saturated warm color palette inspired by vintage design, applying rich oranges, browns, and golden yellows to create an energetic, nostalgic interface aesthetic.
+
+12. **Bold Electric Contrast**: Use high-contrast color combinations with bright, energetic accent tones to create a playful, modern interface that draws attention and conveys vibrancy.
 
 ### 8.2 Typography & Hierarchy (6 Options)
 

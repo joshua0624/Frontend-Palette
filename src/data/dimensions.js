@@ -1,13 +1,13 @@
 /**
  * Frontend Palette v1.2 - Complete Dimension Data
  *
- * 9 dimensions, 51 total options
+ * 9 dimensions, 56 total options
  * Each option includes CSS variable mappings for live preview
  */
 
 export const DIMENSIONS = [
   // ============================================
-  // 1. COLOR SYSTEM (7 options)
+  // 1. COLOR SYSTEM (12 options)
   // ============================================
   {
     id: 'colorSystem',
@@ -16,122 +16,207 @@ export const DIMENSIONS = [
     order: 1,
     options: [
       {
-        id: 'muted-neutral-accent',
-        label: 'Muted Neutral with Accent',
-        descriptor: 'Use a low-saturation neutral color palette with warm or cool undertones, and apply a single restrained accent color sparingly to highlight primary actions and key states.',
+        id: 'clean-neutral-foundation',
+        label: 'Clean Neutral Foundation',
+        descriptor: 'Classic neutral palette with warm undertones and subtle contrast variation, using a refined blue accent for primary actions. Professional and timeless, suitable for corporate and business applications.',
         cssVars: {
-          '--color-background': '#fafaf9',
-          '--color-background-elevated': '#ffffff',
-          '--color-background-subtle': '#f5f5f4',
-          '--color-text-primary': '#1c1917',
-          '--color-text-secondary': '#57534e',
-          '--color-text-tertiary': '#78716c',
-          '--color-accent': '#2563eb',
-          '--color-accent-hover': '#1d4ed8',
-          '--color-border': '#e7e5e4',
-          '--color-border-strong': '#d6d3d1',
-        }
-      },
-      {
-        id: 'high-contrast-functional',
-        label: 'High-Contrast Functional',
-        descriptor: 'Use a high-contrast color palette with clear foreground and background separation, and apply accent colors primarily to reinforce interactive states and system feedback.',
-        cssVars: {
-          '--color-background': '#ffffff',
-          '--color-background-elevated': '#ffffff',
-          '--color-background-subtle': '#f9fafb',
-          '--color-text-primary': '#000000',
-          '--color-text-secondary': '#374151',
-          '--color-text-tertiary': '#6b7280',
-          '--color-accent': '#dc2626',
-          '--color-accent-hover': '#b91c1c',
-          '--color-border': '#d1d5db',
-          '--color-border-strong': '#9ca3af',
-        }
-      },
-      {
-        id: 'soft-monochrome',
-        label: 'Soft Monochrome',
-        descriptor: 'Use a predominantly monochrome color palette with subtle tonal variation, and rely on value shifts rather than hue changes to establish hierarchy and emphasis.',
-        cssVars: {
-          '--color-background': '#f8f8f8',
-          '--color-background-elevated': '#ffffff',
-          '--color-background-subtle': '#f3f3f3',
-          '--color-text-primary': '#2d2d2d',
-          '--color-text-secondary': '#5a5a5a',
-          '--color-text-tertiary': '#8a8a8a',
-          '--color-accent': '#4a4a4a',
-          '--color-accent-hover': '#363636',
-          '--color-border': '#e3e3e3',
-          '--color-border-strong': '#d0d0d0',
-        }
-      },
-      {
-        id: 'balanced-neutral-spectrum',
-        label: 'Balanced Neutral Spectrum',
-        descriptor: 'Use a balanced neutral palette with moderate saturation and controlled contrast, and distribute color evenly across surfaces, text, and interactive elements without relying on a dominant accent.',
-        cssVars: {
-          '--color-background': '#f5f5f5',
-          '--color-background-elevated': '#fefefe',
-          '--color-background-subtle': '#efefef',
-          '--color-text-primary': '#2a2a2a',
-          '--color-text-secondary': '#5c5c5c',
-          '--color-text-tertiary': '#8f8f8f',
-          '--color-accent': '#6366f1',
-          '--color-accent-hover': '#4f46e5',
-          '--color-border': '#d9d9d9',
-          '--color-border-strong': '#c4c4c4',
-        }
-      },
-      {
-        id: 'dark-forward-interface',
-        label: 'Dark-Forward Interface',
-        descriptor: 'Use a dark-forward color palette with subdued backgrounds and elevated foreground contrast, and reserve brighter tones for primary actions and critical states only.',
-        cssVars: {
-          '--color-background': '#0f0f0f',
-          '--color-background-elevated': '#1a1a1a',
-          '--color-background-subtle': '#0a0a0a',
-          '--color-text-primary': '#f5f5f5',
-          '--color-text-secondary': '#a3a3a3',
+          '--color-background': '#FFFFFF',
+          '--color-background-elevated': '#F8F9FA',
+          '--color-background-subtle': '#F1F3F5',
+          '--color-text-primary': '#1A1A1A',
+          '--color-text-secondary': '#525252',
           '--color-text-tertiary': '#737373',
-          '--color-accent': '#3b82f6',
-          '--color-accent-hover': '#2563eb',
-          '--color-border': '#262626',
-          '--color-border-strong': '#404040',
+          '--color-accent': '#0066CC',
+          '--color-accent-hover': '#0052A3',
+          '--color-border': '#E5E7EB',
+          '--color-border-strong': '#9CA3AF',
         }
       },
       {
-        id: 'muted-pastel-accents',
-        label: 'Muted Pastel Accents',
-        descriptor: 'Use a low-saturation neutral palette and apply soft pastel accent tones selectively to highlight interface states without compromising overall readability.',
+        id: 'soft-slate-interface',
+        label: 'Soft Slate Interface',
+        descriptor: 'Muted cool-toned palette with gentle slate backgrounds and controlled contrast, applying a sophisticated teal accent sparingly to interactive elements and maintaining visual calm throughout.',
         cssVars: {
-          '--color-background': '#fdfcfb',
-          '--color-background-elevated': '#ffffff',
-          '--color-background-subtle': '#f9f7f5',
-          '--color-text-primary': '#2c2722',
-          '--color-text-secondary': '#635e5a',
-          '--color-text-tertiary': '#8a8581',
-          '--color-accent': '#a78bfa',
-          '--color-accent-hover': '#8b5cf6',
-          '--color-border': '#ebe7e3',
-          '--color-border-strong': '#d9d3cd',
+          '--color-background': '#F5F7F9',
+          '--color-background-elevated': '#FFFFFF',
+          '--color-background-subtle': '#EDF0F3',
+          '--color-text-primary': '#1E293B',
+          '--color-text-secondary': '#475569',
+          '--color-text-tertiary': '#64748B',
+          '--color-accent': '#0D9488',
+          '--color-accent-hover': '#0F766E',
+          '--color-border': '#CBD5E1',
+          '--color-border-strong': '#94A3B8',
         }
       },
       {
-        id: 'functional-warm-palette',
-        label: 'Functional Warm Palette',
-        descriptor: 'Use a warm-toned palette with medium contrast, applying accent colors to primary actions while keeping secondary elements subdued for hierarchy clarity.',
+        id: 'modern-monochrome',
+        label: 'Modern Monochrome',
+        descriptor: 'Contemporary monochrome system with precise tonal gradation and high contrast, using value shifts for hierarchy and a single vibrant accent for critical actions only.',
         cssVars: {
-          '--color-background': '#fef8f5',
-          '--color-background-elevated': '#ffffff',
-          '--color-background-subtle': '#fcf3ed',
-          '--color-text-primary': '#292421',
-          '--color-text-secondary': '#5e5651',
-          '--color-text-tertiary': '#8b847e',
-          '--color-accent': '#ea580c',
-          '--color-accent-hover': '#c2410c',
-          '--color-border': '#ede4dd',
-          '--color-border-strong': '#ddd0c5',
+          '--color-background': '#FAFAFA',
+          '--color-background-elevated': '#FFFFFF',
+          '--color-background-subtle': '#F3F3F3',
+          '--color-text-primary': '#0A0A0A',
+          '--color-text-secondary': '#404040',
+          '--color-text-tertiary': '#737373',
+          '--color-accent': '#DC2626',
+          '--color-accent-hover': '#B91C1C',
+          '--color-border': '#E5E5E5',
+          '--color-border-strong': '#A3A3A3',
+        }
+      },
+      {
+        id: 'warm-corporate-canvas',
+        label: 'Warm Corporate Canvas',
+        descriptor: 'Warm-leaning neutral base with honeyed undertones and medium contrast, featuring a rich amber accent that brings approachability to professional interfaces while maintaining credibility.',
+        cssVars: {
+          '--color-background': '#FAF8F5',
+          '--color-background-elevated': '#FFFFFF',
+          '--color-background-subtle': '#F2EFE9',
+          '--color-text-primary': '#292524',
+          '--color-text-secondary': '#57534E',
+          '--color-text-tertiary': '#78716C',
+          '--color-accent': '#D97706',
+          '--color-accent-hover': '#B45309',
+          '--color-border': '#E7E5E4',
+          '--color-border-strong': '#A8A29E',
+        }
+      },
+      {
+        id: 'deep-charcoal-system',
+        label: 'Deep Charcoal System',
+        descriptor: 'Dark-forward interface with rich charcoal backgrounds and elevated contrast, reserving lighter tones for emphasis and using a crisp cyan accent for primary interactions.',
+        cssVars: {
+          '--color-background': '#1A1A1A',
+          '--color-background-elevated': '#262626',
+          '--color-background-subtle': '#171717',
+          '--color-text-primary': '#FAFAFA',
+          '--color-text-secondary': '#D4D4D4',
+          '--color-text-tertiary': '#A3A3A3',
+          '--color-accent': '#06B6D4',
+          '--color-accent-hover': '#0891B2',
+          '--color-border': '#404040',
+          '--color-border-strong': '#525252',
+        }
+      },
+      {
+        id: 'serene-blue-foundation',
+        label: 'Serene Blue Foundation',
+        descriptor: 'Soft blue-tinted backgrounds create a calm digital environment with subtle color presence, paired with balanced neutrals and a complementary indigo accent for trustworthy interactions.',
+        cssVars: {
+          '--color-background': '#F0F4F8',
+          '--color-background-elevated': '#FFFFFF',
+          '--color-background-subtle': '#E6EDF4',
+          '--color-text-primary': '#1E293B',
+          '--color-text-secondary': '#475569',
+          '--color-text-tertiary': '#64748B',
+          '--color-accent': '#4F46E5',
+          '--color-accent-hover': '#4338CA',
+          '--color-border': '#CBD5E1',
+          '--color-border-strong': '#94A3B8',
+        }
+      },
+      {
+        id: 'balanced-earth-tones',
+        label: 'Balanced Earth Tones',
+        descriptor: 'Organic palette featuring warm browns and muted greens with subdued contrast, creating a grounded and natural aesthetic that conveys authenticity and environmental consciousness.',
+        cssVars: {
+          '--color-background': '#F9F7F4',
+          '--color-background-elevated': '#FFFFFF',
+          '--color-background-subtle': '#F1EDE6',
+          '--color-text-primary': '#3E2723',
+          '--color-text-secondary': '#5D4037',
+          '--color-text-tertiary': '#795548',
+          '--color-accent': '#6B8E23',
+          '--color-accent-hover': '#556B2F',
+          '--color-border': '#D7CCC8',
+          '--color-border-strong': '#A1887F',
+        }
+      },
+      {
+        id: 'sunset-burst-canvas',
+        label: 'Sunset Burst Canvas',
+        descriptor: 'Vibrant warm palette inspired by golden hour, featuring peachy pink backgrounds with rich coral and burnt orange accents that create an energetic, optimistic, and distinctly memorable interface aesthetic.',
+        cssVars: {
+          '--color-background': '#FFF5F0',
+          '--color-background-elevated': '#FFFFFF',
+          '--color-background-subtle': '#FFE8DC',
+          '--color-text-primary': '#4A1E0A',
+          '--color-text-secondary': '#7C3A1E',
+          '--color-text-tertiary': '#9C5D3F',
+          '--color-accent': '#FF6B35',
+          '--color-accent-hover': '#E85A2B',
+          '--color-border': '#FFD4BC',
+          '--color-border-strong': '#FFAA7F',
+        }
+      },
+      {
+        id: 'electric-lime-pulse',
+        label: 'Electric Lime Pulse',
+        descriptor: 'Bold high-energy palette combining sharp lime green accents with deep charcoal foundations, creating striking contrast and modern vibrancy perfect for tech-forward and innovative brands seeking maximum visual impact.',
+        cssVars: {
+          '--color-background': '#FAFAFA',
+          '--color-background-elevated': '#FFFFFF',
+          '--color-background-subtle': '#F3F3F3',
+          '--color-text-primary': '#1A1A1A',
+          '--color-text-secondary': '#404040',
+          '--color-text-tertiary': '#737373',
+          '--color-accent': '#84CC16',
+          '--color-accent-hover': '#65A30D',
+          '--color-border': '#E5E5E5',
+          '--color-border-strong': '#A3A3A3',
+        }
+      },
+      {
+        id: 'amethyst-dusk-system',
+        label: 'Amethyst Dusk System',
+        descriptor: 'Rich violet-forward palette with deep purple backgrounds and rose gold accents, evoking luxury and sophistication with an unconventional color harmony that feels both elegant and contemporary.',
+        cssVars: {
+          '--color-background': '#2D1B3D',
+          '--color-background-elevated': '#3A2449',
+          '--color-background-subtle': '#241634',
+          '--color-text-primary': '#F3E8FF',
+          '--color-text-secondary': '#D8B4FE',
+          '--color-text-tertiary': '#C084FC',
+          '--color-accent': '#E879F9',
+          '--color-accent-hover': '#D946EF',
+          '--color-border': '#4C3060',
+          '--color-border-strong': '#6B4A87',
+        }
+      },
+      {
+        id: 'tropical-coral-reef',
+        label: 'Tropical Coral Reef',
+        descriptor: 'Playful combination of soft coral backgrounds with turquoise and seafoam accents, bringing beach-inspired warmth and approachability while maintaining professional readability through careful contrast control.',
+        cssVars: {
+          '--color-background': '#FFF5F2',
+          '--color-background-elevated': '#FFFFFF',
+          '--color-background-subtle': '#FFE9E3',
+          '--color-text-primary': '#1F2937',
+          '--color-text-secondary': '#4B5563',
+          '--color-text-tertiary': '#6B7280',
+          '--color-accent': '#14B8A6',
+          '--color-accent-hover': '#0D9488',
+          '--color-border': '#FED7CA',
+          '--color-border-strong': '#FCA78F',
+        }
+      },
+      {
+        id: 'midnight-neon-glow',
+        label: 'Midnight Neon Glow',
+        descriptor: 'Dramatic dark interface with deep navy backgrounds and electric pink accents, creating a cyberpunk-inspired aesthetic that balances edgy modern energy with functional clarity for bold digital experiences.',
+        cssVars: {
+          '--color-background': '#0F1419',
+          '--color-background-elevated': '#1A1F2E',
+          '--color-background-subtle': '#0A0E14',
+          '--color-text-primary': '#F0F0F0',
+          '--color-text-secondary': '#B4B4B4',
+          '--color-text-tertiary': '#8A8A8A',
+          '--color-accent': '#FF2D95',
+          '--color-accent-hover': '#E6007A',
+          '--color-border': '#2A2F3E',
+          '--color-border-strong': '#3E4556',
         }
       },
     ]
